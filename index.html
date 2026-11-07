@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vintage Barbershop</title>
+
+    <!-- css -->
+     <link rel="stylesheet" href="css/styles.css"/>
+     <link rel="stylesheet" href="css/calendar.css"/>
+</head>
+<body>
+    <!-- Header / Navbar -->
+     <header class="site-header">
+        <div class="container header-inner">
+            <a href="#" class="logo" id="logo">
+                <img src="assets/images/logo.png" alt="Vintage Barbershop Logo"/>
+            </a>
+
+            <nav class="nav" id="nav">
+                <a href="#features" class="nav-link">Services</a>
+                <a href="#cta" class="nav-link">Book</a>
+                <a href="#footer" class="nav-links">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button (for later JS) -->
+             <button clas="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+        </div>
+
+        <!-- Mobile Menu Panel (for later JS) -->
+         <div class="mobile-menu" id="mobilemenu">
+            <a href="#feautures" class="mobile-link">services</a>
+            <a href="#cta" class="mobile-link">Book</a>
+            <a href="#footer" class="mobile-link">Contact</a>
+         </div>
+     </header>
+    
+     <!-- hero section -->
+      <section class="hero" id="hero">
+        <div class="container hero-inner">
+            <div class="hero-text">
+                <h1 id="heroHeading">Classic cuts. Clean Shaves. Vintage Styles</h1>
+                <P id="heroSubText">
+                    Experience the tradition of a true barbershop-precision fades, straight-razor shaves, and a welcoming atmosphere.
+                </P>
+
+                <div class="hero-actions">
+                    <a href="#cta" class="btn btn-primary" id="bookBtn">Book an Appointment</a>
+                    <a href="#features" class="btn btn-secondary" id="servicesBtn">View services</a>
+                </div>
+            </div>
+            <div class="hero-media"
+            <img
+            src="assets/images/hero.jpg"
+            alt="Barbershop Hero"
+            class="hero-img"
+            id="heroImg"
+            />
+        </div>
+        </div>
+      </section>
+
+      <!-- Features / services section -->
+
+      <section class="features" id="features"
+      <div class="container"
+      <h2 class="section-title" id="featuresTitle">Services</h2>
+      <p class="section-subtitle" id="featureSubtitle">
+        Quality grooming services designed for comfort, style, and confidence.
+      </p>
+
+      <div class="feature-grid" id="featureGrid">
+<!-- feature card one -->
+        <article class="feature-card">
+            <img
+            src="assets/images/feature-1.jpg"
+            alt="Classic haircut"
+            class="feature-img"/>
+            <h3 class="feature-title">Classic haircut</h3>
+            <p class="feature-text">
+                Timeless cuts with modern precision-tailored to your style.
+            </p>
+            </article>
+
+                <!-- Feature card 2 -->
+                  <article class="feature-card">
+            <img
+            src="assets/images/feature-4.jpg"
+            alt="Beard trim"
+            class="feature-img"/>
+            <h3 class="feature-title">Beard Trim</h3>
+            <p class="feature-text">
+                Shape,line-up, and refine your beard for a clean finish.
+            </p>
+        </article>
+
+        <!-- Feature card 3 -->
+
+         <article class="feature-card">
+            <img
+            src="assets/images/feature-3.jpg"
+            alt="Straight Razor Shave"
+            class="feature-img"/>
+            <h3 class="feature-title">Straight Razor Shave</h3>
+            <p class="feature-text">
+                Hot Towel, Smooth shave, and a classic barbershop experience.
+            </p>
+        </article>  
+      </div>
+    </div>
+</section>
+
+<!--        call to action section -->
+        <section class="cta" id="cta">
+            <div class="container cta-inner">
+                <div class="cta-text"
+                <h2 id="ctaHeading">ready for a fresh look?</h2>
+                <p id="ctaText">
+                    Walk ins welcome, appointments recommended. Book today and leave looking sharp. 
+                </p>
+            </div>
+
+            <div clas="cta-actions">
+                <button class="bnt btn-primary" id="ctaBtn">Book Now</button>
+                <button class="btn btn-secondary" id="callBtn">Call Us</button>
+            </div>
+        </div>
+
+        <div class="container booking-layout">
+            <div class="calendar-card">
+                <div class="calendar-header">
+                    <button class="calendar-nav-btn" id="prevMonthbtn">←</button>
+                        <h3 id="calendarMonthLabel">Month Year</h3>
+                    <button class="calendar-nav-btn" id="nextMonthbtn">→</button>
+                </div>
+
+                <div class="calendar-weekdays">
+                    <span>Sun</span>
+                    <span>Mon</span>
+                    <span>Tue</span>
+                    <span>Wed</span>
+                    <span>Thu</span>
+                    <span>Fri</span>
+                    <span>Sat</span>
+                </div>
+
+                <div class="calendar-grid" id="calendarGrid"></div>
+            </div>
+
+            <div class="booking-panel">
+                <h3 class="booking-panel-title">Book your appointment</h3>
+
+                <p class="selected-date-text">
+                    Selected Date:
+                    <span id="selecteddateText">Choose a date</span>
+                </p>
+
+                <div class="time-slots" id="timeSlots"></div>
+
+                <form id="bookingform" class="booking-form">
+                    <div class="form-group">
+                        <label for="customerName">Name</label>
+                        <input
+                        type="text"
+                        id="customerName"
+                        placeholder="Enter your name"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customerService">Services</label>
+                        <select id="customerService">
+                            <option value="">Choose a service</option>
+                            <option value="Classic Haircut">Classic haircut</option>
+                            <option value="Beard Trim">Beard trim</option>
+                            <option value="Straight Razor shave">straight Razor Shave</option>
+                            <option value="Fade &amp; Style">Fade & style</option>
+                        </select>
+                    </div>
+
+                    <input type="hidden" id="selectedTimeInput" />
+
+                    <button type="submit" class="btn btn-primary booking-sumbit-bbtn">
+                        Confirm Booking
+                    </button>
+
+                    <p id="bookingMessage" class="booking-message"></p>
+                </form>
+            </div>
+        </div>
+        </section>
+</body>
+</html>
